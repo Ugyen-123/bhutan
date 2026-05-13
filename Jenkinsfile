@@ -1,16 +1,22 @@
 pipeline{
   agent any
   stages{
-    stage('hello'){
+    stage('build'){
       steps{
-        echo "demo of pi[eline from poll scm"
-        echo "made changes"
-        sh 'git pull origin master'
-        sh 'cat file1'
+        sh 'docker build'
         
-      }
-      
-      
+      } 
+    }
+    stage('test){
+          steps{
+            sh 'docker test'
+          }
+    }
+    stage('deploy){
+          steps{
+            sh 'docker deploy '
+          }
+            
     }
   }
 }
