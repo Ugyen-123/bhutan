@@ -7,12 +7,12 @@ pipeline{
         
       } 
     }
-    stage('test){
+    stage('test'){
           steps{
             sh 'docker test'
           }
     }
-    stage('deploy){
+    stage('deploy'){
           steps{
             sh 'docker deploy '
           }
