@@ -5,6 +5,8 @@ pipeline{
       steps{
         echo "demo of pi[eline from poll scm"
         echo "made changes"
+        git pull origin master
+        cat file1
         
       }
       
