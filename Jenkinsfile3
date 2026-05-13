@@ -1,0 +1,16 @@
+pipeline {
+    agent any
+
+    parameters {
+        string(name: 'ENV', defaultValue: 'dev', description: 'Deployment Environment')
+    }
+
+    stages {
+
+        stage('Print Environment') {
+            steps {
+                echo "Deploying to ${params.ENV}"
+            }
+        }
+    }
+}
